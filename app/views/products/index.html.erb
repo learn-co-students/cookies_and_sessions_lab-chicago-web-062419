@@ -1,0 +1,22 @@
+<% cart.each do |p| %>
+    <p> <%= p %> </p>
+<% end %>
+
+<%-# form_tag below was from solutions. Interesting how no model was used. -%>
+
+    <%= form_tag ({controller: 'products',
+        action: 'add',
+        method: 'post'}) do %>
+
+        <input name=product>
+        <input type=submit value='add to cart'>
+    <% end %>
+
+<% if false%>
+    <% form_for @product do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <br>
+        <%= f.submit %>
+    <% end %>
+<% end %>
